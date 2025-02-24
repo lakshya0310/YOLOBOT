@@ -1,0 +1,9 @@
+<launch>
+  <!-- Declare a parameter for simulation time -->
+  <param name="use_sim_time" value="false" />
+
+  <!-- Launch the robot control node -->
+  <node pkg="yolobot_control" type="robot_control.py" name="robot_control" output="screen">
+  </node>
+</launch>
+
