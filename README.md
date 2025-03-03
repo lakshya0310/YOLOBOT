@@ -25,8 +25,8 @@ Ensure you have the following installed:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/yourrepository.git
-cd yourrepository
+git clone https://github.com/lakshya0310/YOLOBOT.git
+cd YOLOBOT
 ```
 
 ### Install Dependencies
@@ -36,35 +36,31 @@ pip install -r requirements.txt
 
 ### Set Up a Catkin Workspace
 ```bash
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-ln -s $(pwd)/yourrepository yolov5_ros
-cd ~/catkin_ws
+mkdir -p ~/yolobot/src
+cd ~/yolobot/src
+ln -s $(pwd)/YOLOBOT yolov5_ros
+cd ~/yolobot
 catkin_make
 source devel/setup.bash
 ```
 
 ## Usage
 
-### 1. Launch Gazebo
+### 1. Launch ROSCORE
 ```bash
-roslaunch gazebo_ros empty_world.launch
+roscore
 ```
-
-### 2. Run the Object Detection Node
+### 2. Launch the Bot
 ```bash
-rosrun yolov5_ros detect.py
+   cd ~/catkin_ws
+    source devel/setup.bash
+   roslaunch yolobot_gazebo yolobot_launch.launch
 ```
-
-### 3. Control the Robot
-- **Joystick Control**: Ensure your joystick is connected and configured in ROS.
-- **Keyboard Control** (Optional): You can modify the code to use keyboard commands instead of a joystick.
-
-### 4. View the Detections
-```bash
-rqt_image_view /yolov5/detections
+### 3. Launch YOLOv5
+```bash 
+cd ~/catkin_ws/src/yolobot_recognition
+python3 
 ```
-
 ## Customization
 - **Use a different YOLO model**: Replace `'yolov5s.pt'` with `'yolov5m.pt'` or a custom-trained model.
 - **Change camera topic**: Modify `rospy.Subscriber("/camera/image_raw", Image, self.callback)` in `detect.py` to match your camera topic.
