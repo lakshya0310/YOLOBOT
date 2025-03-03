@@ -36,6 +36,8 @@ pip install -r requirements.txt
 
 ### Set Up a Catkin Workspace
 ```bash
+cd ~/YOLOBOT/yolobot
+mv src ~
 cd ~/yolobot
 catkin_make
 source devel/setup.bash
