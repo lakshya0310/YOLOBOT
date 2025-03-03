@@ -48,18 +48,18 @@ source devel/setup.bash
 
 ### 1. Launch ROSCORE
 ```bash
-roscore
+$roscore
 ```
 ### 2. Launch the Bot
 ```bash
-   cd ~/catkin_ws
-    source devel/setup.bash
-   roslaunch yolobot_gazebo yolobot_launch.launch
+$cd ~/catkin_ws
+$source devel/setup.bash
+$roslaunch yolobot_gazebo yolobot_launch.launch
 ```
 ### 3. Launch YOLOv5
 ```bash 
-cd ~/catkin_ws/src/yolobot_recognition
-python3 
+$cd ~/catkin_ws/src/yolobot_recognition/scripts
+$python3 ros_recognition_yolo.py
 ```
 ## Customization
 - **Use a different YOLO model**: Replace `'yolov5s.pt'` with `'yolov5m.pt'` or a custom-trained model.
