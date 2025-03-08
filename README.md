@@ -36,9 +36,9 @@ pip install -r requirements.txt
 
 ### Set Up a Catkin Workspace
 ```bash
-cd ~/YOLOBOT
-mv yolobot ~
-cd ~/yolobot
+mkdir -p ~/catkin_ws/src
+mv YOLOBOT ~/catkin_ws/src/yolobot
+cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```
@@ -57,7 +57,7 @@ roslaunch yolobot_gazebo yolobot_launch.launch
 ```
 ### 3. Launch YOLOv5
 ```bash 
-cd ~/catkin_ws/src/yolobot_recognition/scripts
+cd ~/catkin_ws/src/yolobot/yolobot_recognition/scripts
 python3 ros_recognition_yolo.py
 ```
 ## Customization
