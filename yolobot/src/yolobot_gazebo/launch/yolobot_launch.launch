@@ -1,6 +1,6 @@
 <launch>
     <!-- Launch the joystick node -->
-    node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen" />
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen" />
     
     <!-- Include the world launch file -->
     <include file="$(find yolobot_gazebo)/launch/start_world_launch.launch" />

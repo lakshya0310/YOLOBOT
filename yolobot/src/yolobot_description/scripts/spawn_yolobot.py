@@ -42,7 +42,7 @@ def main():
             model_name="yolobot", 
             model_xml=robot_desc, 
             robot_namespace="", 
-            pose=initial_pose, 
+            initial_pose=initial_pose, 
             reference_frame="world"
         )
 
@@ -55,4 +55,7 @@ def main():
         rospy.logerr("Service call failed: %s" % e)
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) < 2:
+        rospy.logerr("Usage: spawn_yolobot.py <path_to_urdf>")
+    else:
+        main()
